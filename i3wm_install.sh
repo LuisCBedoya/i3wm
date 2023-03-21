@@ -100,10 +100,10 @@ cp -r ~/i3wm-dotfiles/i3wm/picom/ ~/.config/
 cp -r ~/i3wm-dotfiles/wallpapers/ ~/.local/share/
 
 #icons
-sudo cp -r ~/i3wm-dotfiles/icons/Tela-circle /usr/share/icons && sudo cp -r ~/i3wm-dotfiles/icons/Tela-circle-dark /usr/share/icons 
+#sudo cp -r ~/i3wm-dotfiles/icons/Tela-circle /usr/share/icons && sudo cp -r ~/i3wm-dotfiles/icons/Tela-circle-dark /usr/share/icons 
 
 #theme
-sudo cp -r ~/i3wm-dotfiles/themes/Fluent-Dark /usr/share/themes/
+#sudo cp -r ~/i3wm-dotfiles/themes/Fluent-Dark /usr/share/themes/
 
 #nvidia driver
 $i nvidia-driver
