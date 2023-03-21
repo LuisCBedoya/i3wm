@@ -25,7 +25,7 @@ exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 
 #low_battery
-exec --no-startup-id sh ~/.config/dunst/scripts/low_bat_notifier.sh
+exec --no-startup-id ~/.config/dunst/scripts/low_bat_notifier.sh
 
 # Ajustes de volumen y brillo
 set $refresh_i3status killall -SIGUSR1 i3status
