@@ -29,6 +29,8 @@ $i lame libdvdnav4 libfaac0 libmad0 libmp3lame0 libquicktime2 libstdc++5 libxvid
 
 $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-alsa gstreamer1.0-pulseaudio gstreamer1.0-tools
 
+#fonts
+$i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
 #user packages
 $i1 kitty feh chromium dunst libnotify-bin faba-icon-theme curl wget unzip
