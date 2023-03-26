@@ -8,25 +8,29 @@ if ! [ $(id -u) = 0 ]; then
   exit 1
 fi
 
-cat ./xsessionrc >> /home/$SUDO_USER/.xsessionrc
-chown $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.xsessionrc
-
 apt install -y \
     libxfce4ui-utils \
-    thunar \
-    xfce4-appfinder \
     xfce4-panel \
     xfce4-pulseaudio-plugin \
     xfce4-whiskermenu-plugin \
     xfce4-session \
     xfce4-settings \
-    xfce4-terminal \
     xfconf \
     xfdesktop4 \
     xfwm4 \
-    adwaita-qt \
     qt5ct
+
+apt install -y nvidia-driver
+apt install -y linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git
+apt install -y intel-microcode
+apt install --no-install-recommends -y kitty chromium dunst libnotify-bin
+
 
 echo
 echo Instalación de xfce completa, reinicie y emita 'startx'
 echo
+
+
+
+
+
