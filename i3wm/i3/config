@@ -12,7 +12,7 @@ for_window [class="^.*"] border pixel 2
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 #wallpaper 
-exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/city.jpg
+exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/astronauta.png
 
 #trasparencia 
 exec_always --no-startup-id picom

@@ -18,6 +18,7 @@ apt install -y \
     xfconf \
     xfdesktop4 \
     xfwm4 \
+    xinit \
     qt5ct
 
 apt install -y nvidia-driver
