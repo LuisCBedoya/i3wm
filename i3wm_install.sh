@@ -14,6 +14,9 @@ $i linux-headers-$(uname -r) build-essential make automake pkg-config cmake auto
 # $i amd64-microcode
 $i intel-microcode
 
+#nvidia driver
+$i nvidia-driver
+
 # Network File Tools/System Events
 $i dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends
 
@@ -33,7 +36,7 @@ $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
 #user packages
-$i1 kitty feh chromium dunst libnotify-bin faba-icon-theme curl wget unzip pcmanfm lxappearance gwenview vlc
+$i1 kitty feh firefox-esr-l10n-es-mx dunst libnotify-bin faba-icon-theme curl wget unzip 
 
 #packages needed picom after installation
 $i libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
@@ -46,12 +49,6 @@ git submodule update --init --recursive
 meson setup --buildtype=release . build
 ninja -C build
 sudo ninja -C build install
-
-#Install theme
-cd
-git clone https://github.com/NicklasVraa/Nova-galactic-theme.git
-cd Nova-galactic-theme
-sudo cp -r Nova-galactic /usr/share/themes
 
 #packages needed i3 after installation
 $i meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev i3status
@@ -79,10 +76,6 @@ sudo install pfetch-master/pfetch /usr/local/bin/
 ls -l /usr/local/bin/pfetch
 rm -r master.zip
 
-#backports repository
-cd
-sudo cp -r ~/i3wm-dotfiles/i3wm/files/backports.list /etc/apt/sources.list.d/
-
 #fonts
 cd
 sudo cp -r ~/i3wm-dotfiles/fonts/JetBrainsMonoFonts /usr/share/fonts/
@@ -106,9 +99,6 @@ cp -r ~/i3wm-dotfiles/i3wm/picom/ ~/.config/
 #wallpapers
 cp -r ~/i3wm-dotfiles/wallpapers/ ~/.local/share/
 
-
-#nvidia driver
-$i nvidia-driver
 
 sudo apt autoremove
 

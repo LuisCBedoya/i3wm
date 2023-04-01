@@ -31,8 +31,8 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "450x10-30+30"
 
+    geometry = "350x5-5+36"
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
 
@@ -277,28 +277,25 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#3B4252"
+    background = "#000000"
     foreground = "#ffffff"
-#    frame_color = "#00bc00"
-    frame_color = "#2E3440"
+    frame_color = "#00bc00"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-information.png
 
 [urgency_normal]
-    background = "#3B4252"
+    background = "#000000"
     foreground = "#ffffff"
-    #frame_color = "#e8d900"
-    frame_color = "#2E3440"
+    frame_color = "#e8d900"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-question.png
 
 [urgency_critical]
-    background = "#3B4252"
+    background = "#000000"
     foreground = "#ffffff"
-#    frame_color = "#d50000"
-    frame_color = "#2E3440"
+    frame_color = "#d50000"
     timeout = 5
     # Icon for notifications with critical urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-warning.png

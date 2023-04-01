@@ -5,14 +5,15 @@ set $mod Mod4
 font pango:monospace 8
 
 # ocultar titulo de las ventanas 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 4
+default_border pixel 0
 
 
 #i3 lock 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 #wallpaper 
-exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/astronauta.png
+exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/green_paradise.jpg
 
 #trasparencia 
 exec_always --no-startup-id picom
@@ -54,6 +55,8 @@ bindsym $mod+Shift+q kill
 #abrir browser
 bindsym $mod+Shift+b exec "chromium"
 
+bindsym $mod+Shift+t exec "thunar"
+
 # mostrar lanzador de aplicaciones
 bindsym $mod+d exec --no-startup-id rofi -show drun 
 
@@ -86,7 +89,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # colocar pantalla en modo flotante
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+w floating toggle
 
 # cambiar foco entre ventana flotante y ventana anclada
 bindsym $mod+space focus mode_toggle
@@ -165,11 +168,11 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#        status_command i3status
-	#colors {
-	#background #000000
-        #}
+#        status_command i3status-rs ~/.config/i3/i3status-rust/config.toml 
+#        position top
 #}
 
-gaps outer 0
-gaps inner 7
+gaps outer 5
+gaps inner 10
+#smart_gaps on
+
