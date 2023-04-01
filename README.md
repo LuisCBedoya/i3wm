@@ -21,7 +21,7 @@ i3wm_dotfiles
 
 ### Distribución
 
--  **EndeavourOS**
+-  **Debian 11 bullseye **
 
 #### Paquetes
 - **Shell** : Zsh
