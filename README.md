@@ -18,3 +18,22 @@ i3wm_dotfiles
 
 
 ![Meditation](https://user-images.githubusercontent.com/90487955/229314540-55aaa76e-30f9-4891-8a26-78d694426779.png)
+
+### Distribución
+
+-  **EndeavourOS**
+
+#### Paquetes
+- **Shell** : Zsh
+- **Terminal**: Kitty
+- **Compositor**: picom
+- **WM**: i3
+- **Bar**: None
+- **Info** : pfetch
+- **Gestion Wallpaper**: Feh
+- **Browser** : Firefox / Chromium
+- **Lanzador** : None
+- **Editor**: neovim
+- **Explorer** : None
+- **Notificaciones** : Dunst
+- **Font** : JetBrainsMonoFonts
