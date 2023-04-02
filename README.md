@@ -21,7 +21,7 @@ i3wm_dotfiles
 
 ### Distribución
 
--  **Debian 11 bullseye **
+-  **Debian 11 bullseye**
 
 #### Paquetes
 - **Shell** : Zsh
