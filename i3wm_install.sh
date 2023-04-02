@@ -6,15 +6,16 @@ i1="sudo apt install --no-install-recommends -y"
 # paquetes xorg 
 $i xorg xbacklight xbindkeys xvkbd xinput xorg-dev
 
-#Paquetes para compilar
-$i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git
-
 
 # $i amd64-microcode
 $i intel-microcode
 
 #nvidia driver
 $i nvidia-driver
+
+#Paquetes para compilar
+$i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git
+
 
 # Network File Tools/System Events
 $i dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends
@@ -37,7 +38,7 @@ $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 #paquetes del usuario
 $i1 kitty feh firefox-esr-l10n-es-mx dunst libnotify-bin faba-icon-theme curl wget unzip 
 
-#packages needed picom after installation
+#paquetes requeridos para picom
 $i libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
 
 #install picom
@@ -49,7 +50,7 @@ meson setup --buildtype=release . build
 ninja -C build
 sudo ninja -C build install
 
-#packages needed i3 after installation
+#paquetes requeridos para i3-gaps
 $i meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev i3status
 
 #Install i3
@@ -75,25 +76,25 @@ sudo install pfetch-master/pfetch /usr/local/bin/
 ls -l /usr/local/bin/pfetch
 rm -r master.zip
 
-#fonts
+#fuentes del usuario 
 cd
-sudo cp -r ~/i3wm-dotfiles/fonts/JetBrainsMonoFonts /usr/share/fonts/
+sudo cp -r ~/i3wm-dotfiles/config/fonts/JetBrainsMonoFonts /usr/share/fonts/
 
 #kitty files
 cd
-cp -r ~/i3wm-dotfiles/i3wm/kitty/ ~/.config/
+cp -r ~/i3wm-dotfiles/config/kitty/ ~/.config/
 
 #i3 files
 cd
-cp -r ~/i3wm-dotfiles/i3wm/i3/ ~/.config/
+cp -r ~/i3wm-dotfiles/config/i3/ ~/.config/
 
 #dunst files
 cd
-cp -r ~/i3wm-dotfiles/i3wm/dunst/ ~/.config/
+cp -r ~/i3wm-dotfiles/config/dunst/ ~/.config/
 
 #picom files
 cd
-cp -r ~/i3wm-dotfiles/i3wm/picom/ ~/.config/
+cp -r ~/i3wm-dotfiles/config/picom/ ~/.config/
 
 #wallpapers
 cp -r ~/i3wm-dotfiles/wallpapers/ ~/.local/share/

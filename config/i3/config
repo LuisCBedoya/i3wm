@@ -60,7 +60,7 @@ bindsym $mod+Shift+b exec "firefox"
 bindsym $mod+Shift+t exec "thunar"
 
 # mostrar lanzador de aplicaciones
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+shift+d exec --no-startup-id dmenu_run 
 
 # cambiar foco
 bindsym $mod+h focus left
@@ -91,7 +91,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # colocar pantalla en modo flotante
-bindsym $mod+Shift+s floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # cambiar foco entre ventana flotante y ventana anclada
 bindsym $mod+space focus mode_toggle
@@ -174,9 +174,10 @@ bindsym $mod+r mode "resize"
 #        position top
 #}
 
-gaps outer 5
-gaps inner 10
+gaps outer 0
+gaps inner 8
 #smart_gaps on
 
 bindsym $mod+plus gaps inner current plus 3
 bindsym $mod+minus gaps inner current minus 3
+
