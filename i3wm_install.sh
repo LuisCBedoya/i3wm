@@ -3,14 +3,13 @@
 i="sudo apt install -y"
 i1="sudo apt install --no-install-recommends -y"
 
-# xorg display server installation
+# paquetes xorg 
 $i xorg xbacklight xbindkeys xvkbd xinput xorg-dev
 
 #Paquetes para compilar
 $i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git
 
 
-# Microcode for Intel/AMD
 # $i amd64-microcode
 $i intel-microcode
 
@@ -24,7 +23,7 @@ $i dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
-# Sound packages
+# paquetes de sonido 
 $i pulseaudio alsa-utils pavucontrol alsa-firmware-loaders alsa-oss alsa-tools alsamixergui volumeicon-alsa pacman paprefs pavumeter pulseaudio-utils ffmpeg2theora sound-icons
 
 #algunos codecs
@@ -32,10 +31,10 @@ $i lame libdvdnav4 libfaac0 libmad0 libmp3lame0 libquicktime2 libstdc++5 libxvid
 
 $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-alsa gstreamer1.0-pulseaudio gstreamer1.0-tools
 
-#fonts
+# fuentes browser
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
-#user packages
+#paquetes del usuario
 $i1 kitty feh firefox-esr-l10n-es-mx dunst libnotify-bin faba-icon-theme curl wget unzip 
 
 #packages needed picom after installation

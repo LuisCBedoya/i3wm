@@ -47,18 +47,20 @@ floating_modifier $mod
 
 # Iniciar terminal 
 bindsym $mod+Return exec kitty
+bindsym $mod+y exec scrot
+
 
 
 # Cerrar ventana 
 bindsym $mod+Shift+q kill
 
 #abrir browser
-bindsym $mod+Shift+b exec "chromium"
+bindsym $mod+Shift+b exec "firefox"
 
 bindsym $mod+Shift+t exec "thunar"
 
 # mostrar lanzador de aplicaciones
-bindsym $mod+d exec --no-startup-id rofi -show drun 
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 
 # cambiar foco
 bindsym $mod+h focus left
@@ -89,7 +91,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # colocar pantalla en modo flotante
-bindsym $mod+Shift+w floating toggle
+bindsym $mod+Shift+s floating toggle
 
 # cambiar foco entre ventana flotante y ventana anclada
 bindsym $mod+space focus mode_toggle
@@ -176,3 +178,5 @@ gaps outer 5
 gaps inner 10
 #smart_gaps on
 
+bindsym $mod+plus gaps inner current plus 3
+bindsym $mod+minus gaps inner current minus 3
