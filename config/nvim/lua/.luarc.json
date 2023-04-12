@@ -1,0 +1,51 @@
+{
+    "workspace.library": [
+        "/home/luc/.config/nvim",
+        "/home/luc/.local/share/nvim/site",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-path",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+        "/usr/share/nvim/runtime",
+        "/lib/nvim",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-buffer/after",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-cmdline/after",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-path/after",
+        "/home/luc/.local/share/nvim/site/pack/packer/start/cmp-vsnip/after",
+        "${3rd}/luassert/library",
+        "${3rd}/love2d/library",
+        "${3rd}/bee/library",
+        "${3rd}/lovr/library",
+        "${3rd}/OpenResty/library",
+        "${3rd}/skynet/library",
+        "${3rd}/luv/library",
+        "${3rd}/Jass/library"
+    ],
+    "runtime.special": {
+        "love.filesystem.load": "loadfile"
+    },
+    "diagnostics.globals": [
+        "vim",
+        "ngx"
+    ],
+    "runtime.version": "Lua 5.3",
+    "workspace.maxPreload": 3200
+}

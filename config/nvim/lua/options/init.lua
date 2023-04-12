@@ -1,4 +1,3 @@
--- niveles de sangria para diferentes tipos de archivos, Habilite todos los complementos de tipo de archivo
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = 'aoOWFc'
 vim.o.hidden = 'true'
@@ -35,4 +34,3 @@ vim.o.autoindent  = true
 vim.bo.autoindent  = true 
 vim.o.expandtab  = true 
 vim.bo.expandtab  = true 
-

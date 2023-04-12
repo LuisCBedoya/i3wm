@@ -36,7 +36,11 @@ $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
 #paquetes del usuario
-$i1 kitty feh firefox-esr-l10n-es-mx dunst libnotify-bin faba-icon-theme curl wget unzip 
+$i1 kitty feh dunst libnotify-bin faba-icon-theme curl wget unzip tar gzip ripgrep devscripts nodejs npm python3-pip
+
+#install cargo 
+cd
+curl https://sh.rustup.rs -sSf | sh
 
 #paquetes requeridos para picom
 $i libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson

@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # ocultar titulo de las ventanas 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 default_border pixel 0
 
 
@@ -55,7 +55,7 @@ bindsym $mod+y exec scrot
 bindsym $mod+Shift+q kill
 
 #abrir browser
-bindsym $mod+Shift+b exec "firefox"
+bindsym $mod+Shift+b exec "chromium"
 
 bindsym $mod+Shift+t exec "thunar"
 
@@ -171,13 +171,13 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 #bar {
 #        status_command i3status-rs ~/.config/i3/i3status-rust/config.toml 
-#        position top
+        #position top
 #}
 
-gaps outer 0
-gaps inner 8
+gaps outer 2
+gaps inner 6
 #smart_gaps on
 
-bindsym $mod+plus gaps inner current plus 3
-bindsym $mod+minus gaps inner current minus 3
+bindsym $mod+plus gaps inner current plus 5
+bindsym $mod+minus gaps inner current minus 5
 
