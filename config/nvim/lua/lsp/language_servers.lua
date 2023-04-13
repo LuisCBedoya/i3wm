@@ -18,29 +18,29 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local root_path = "/home/luc/.local/share/nvim/language_servers/lua-language-server"
 local binary = "/home/luc/.local/share/nvim/language_servers/lua-language-server/bin/lua-language-server"
 
-require 'lspconfig'.lua_ls.setup({
+require("lspconfig").lua_ls.setup({
   cmd = { binary, "-E", root_path .. "/main.lua" },
   -- capabilities
   capabilities = capabilities,
   -- on_attach
   on_attach = function(client)
     client.server_capabilities.document_formatting = false
-  end, 
+  end,
 
   settings = {
     Lua = {
-      runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
-      diagnostics = { globals = { 'vim' } },
+      runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+      diagnostics = { globals = { "vim" } },
       workspace = {
         library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
         },
-        checkThirdParty = false
+        checkThirdParty = false,
       },
-      telemetry = { enable = false }
-    }
-  }
+      telemetry = { enable = false },
+    },
+  },
 })
 -- -----------------------------------------------------------------------------------------------------------------------------
 -- other server

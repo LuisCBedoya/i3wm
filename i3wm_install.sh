@@ -36,7 +36,13 @@ $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
 #paquetes del usuario
-$i1 kitty feh dunst libnotify-bin faba-icon-theme curl wget unzip tar gzip ripgrep devscripts nodejs npm python3-pip
+$i1 kitty feh dunst libnotify-bin faba-icon-theme curl wget unzip tar gzip ripgrep devscripts python3-pip 
+
+#opcional 
+#$i1 mpd ncmpcpp mpv 
+
+#install npm and nodejs
+$i1 nodejs npm 
 
 #install cargo 
 cd

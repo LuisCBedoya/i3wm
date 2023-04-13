@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # ocultar titulo de las ventanas 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 default_border pixel 0
 
 
@@ -30,6 +30,7 @@ exec --no-startup-id ~/.config/dunst/scripts/low_bat_notifier.sh
 
 # Ajustes de volumen y brillo
 set $refresh_i3status killall -SIGUSR1 i3status
+
 
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/dunst/scripts/volume.sh up && $refresh_i3status
