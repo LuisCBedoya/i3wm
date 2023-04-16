@@ -4,7 +4,7 @@ i="sudo apt install -y"
 i1="sudo apt install --no-install-recommends -y"
 
 # paquetes xorg ------------------------------------------------------------- 
-$i xorg xbacklight xbindkeys xvkbd xinput xorg-dev
+$i xorg xbacklight xbindkeys xinput xorg-dev
 
 # $i amd64-microcode ----------------------------------------------------------------------
 $i intel-microcode
@@ -13,7 +13,7 @@ $i intel-microcode
 $i nvidia-driver
 
 #Paquetes para compilar ---------------------------------------------------------------------------------
-$i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git curl wget unzip tar gzip devscripts python3-pip 
+$i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git curl wget unzip tar gzip python3-pip 
 
 # Network File Tools/System Events ----------------------------------------------------------------------------------
 $i dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends
@@ -37,7 +37,7 @@ $i1 kitty feh dunst libnotify-bin faba-icon-theme ripgrep chromium
 
 
 #Algunas opciones 
-#mpv - reproductor de video
+#mpv or vlc - reproductor de video
 #mpd and ncmpcpp - reproductor de audio
 #viewnior - visor de imagenes
 #simplescreenrecorder - grabar pantalla 
