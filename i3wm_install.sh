@@ -33,10 +33,16 @@ $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
 #paquetes del usuario ---------------------------------------------------------------------------------------------------------------------
-$i1 kitty feh dunst libnotify-bin faba-icon-theme ripgrep devscripts chromium
+$i1 kitty feh dunst libnotify-bin faba-icon-theme ripgrep chromium
+
 
 #Algunas opciones 
-#$i1 mpd ncmpcpp mpv viewnior simplescreenrecorder  
+#mpv - reproductor de video
+#mpd and ncmpcpp - reproductor de audio
+#viewnior - visor de imagenes
+#simplescreenrecorder - grabar pantalla 
+#devscripts 
+
 
 #install npm, nodejs and pip installer ----------------------------------------------------------------------------------------------------------
 $i nodejs npm python3-pip 
