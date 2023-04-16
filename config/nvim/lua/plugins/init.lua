@@ -84,6 +84,8 @@ return require("packer").startup({
     use({ "folke/zen-mode.nvim", config = "require('zen-mode-config')" })
     -- twilight focus mode
     -- use {"folke/twilight.nvim",config = "require('twilight-config')"}
+    -- onedark theme
+    use({ "navarasu/onedark.nvim" })
   end,
   -- --------------------------------------------------------------------------------------------------------------------------------------
   config = {

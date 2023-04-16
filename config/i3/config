@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # ocultar titulo de las ventanas 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 default_border pixel 0
 
 
@@ -13,7 +13,7 @@ default_border pixel 0
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 #wallpaper 
-exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/green_paradise.jpg
+exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/gplant.jpg
 
 #trasparencia 
 exec_always --no-startup-id picom
@@ -61,7 +61,7 @@ bindsym $mod+Shift+b exec "chromium"
 bindsym $mod+Shift+t exec "thunar"
 
 # mostrar lanzador de aplicaciones
-bindsym $mod+shift+d exec --no-startup-id dmenu_run 
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons 
 
 # cambiar foco
 bindsym $mod+h focus left
@@ -104,6 +104,17 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #nonbres de los espacios de trabajo
+# set $ws1 "一"
+# set $ws2 "二"
+# set $ws3 "三"
+# set $ws4 "四"
+# set $ws5 "五"
+# set $ws6 "六"
+# set $ws7 "七"
+# set $ws8 "八"
+# set $ws9 "九"
+# set $ws10 "十"
+
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -114,7 +125,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
 # cambiar espacios de trabajo
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -171,11 +181,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#        status_command i3status-rs ~/.config/i3/i3status-rust/config.toml 
+#        status_command i3status 
         #position top
 #}
+client.focused #27423c #27423c  #27423c #5d705c 
 
-gaps outer 2
+gaps outer 0
 gaps inner 6
 #smart_gaps on
 
