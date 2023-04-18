@@ -14,7 +14,7 @@ $i nvidia-driver
 
 #Paquetes para compilar ---------------------------------------------------------------------------------
 $i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git curl wget unzip tar gzip python3-pip 
-$i libncurses-dev flex bison openssl libssl-dev dkms libelf-dev  
+$i libncurses-dev flex bison openssl libssl-dev dkms libelf-dev pkg-config
 
 # Network File Tools/System Events ----------------------------------------------------------------------------------
 $i dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends
