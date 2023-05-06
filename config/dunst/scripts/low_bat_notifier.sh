@@ -11,6 +11,9 @@ FULL_BAT=60
 #
 BAT_PATH=/sys/class/power_supply/BAT1
 BAT_STAT=$BAT_PATH/status
+low="$HOME/.config/dunst/sound/low_battery.ogg"
+full="$HOME/.config/dunst/sound/full_battery.ogg"
+
 
 if [[ -f $BAT_PATH/charge_full ]]
 then
@@ -55,10 +58,12 @@ then
 
         if [[ $bat_percent -lt $LOW_BAT && "$bs" = "Discharging" && $launched -lt 3 ]]
         then
+	    play -q -v 0.40 "$low" &
             notify-send --urgency=critical "$bat_percent% : Low Battery!"
             launched=$((launched+1))
         elif [[ $bat_percent -ge $FULL_BAT && "$bs" = "Charging" ]]
         then
+            play -q -v 0.40 "$full" &
             notify-send --urgency=critical "$bat_percent% : Optimal Battery!"
             launched=0
         fi
