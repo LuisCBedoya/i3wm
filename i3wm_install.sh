@@ -28,9 +28,9 @@ $i gnupg gnupg2 gnupg1
 
 # backports repository and pipewire, wireplumber
 cd
-$s cp -r dwm-dotfiles/config/files/pipewire-upstream.list /etc/apt/sources.list.d/
-$s cp -r dwm-dotfiles/config/files/wireplumber-upstream.list /etc/apt/sources.list.d/
-$s cp -r dwm-dotfiles/config/files/bullseye-backports.list /etc/apt/sources.list.d/
+$s cp -r i3wm-dotfiles/config/files/pipewire-upstream.list /etc/apt/sources.list.d/
+$s cp -r i3wm-dotfiles/config/files/wireplumber-upstream.list /etc/apt/sources.list.d/
+$s cp -r i3wm-dotfiles/config/files/bullseye-backports.list /etc/apt/sources.list.d/
 $s apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
 
 $s apt update -y && $s apt upgrade -y
@@ -55,7 +55,7 @@ enable services ----------------------------------------------
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
-
+#codecs
 $i alsa-utils pavucontrol alsa-firmware-loaders alsa-oss alsa-tools alsamixergui volumeicon-alsa pacman paprefs pavumeter pulseaudio-utils ffmpeg2theora sound-icons
 $i lame libdvdnav4 libfaac0 libmad0 libmp3lame0 libquicktime2 libstdc++5 libxvidcore4 twolame vorbis-tools x264
 $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-alsa gstreamer1.0-pulseaudio gstreamer1.0-tools
