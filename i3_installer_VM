@@ -1,0 +1,107 @@
+#!/bin/bash
+
+i="sudo apt install -y"
+i1="sudo apt install --no-install-recommends -y"
+s="sudo"
+
+
+echo "|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|"
+echo "|Workpace Installer|"
+echo "|__________________|"
+echo ""
+echo ""
+sleep 2s
+echo "Introduzca contraseña para continuar"
+sudo -k
+if sudo true; then
+	clear
+	echo "Iniciando Instalacion..."
+	sleep 2s
+else
+	clear
+	echo "Debe introduccir contraseña para continuar"
+	exit 1
+fi
+
+# paquetes xorg -------------------------------------------------
+$i xorg xbindkeys xinput xorg-dev
+
+#Paquetes para compilar ------------------------------------------
+$i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git curl wget unzip tar gzip python3-pip ninja-build
+$i libncurses-dev flex bison openssl libssl-dev dkms libelf-dev pkg-config liblz4-tool bc rsync
+
+# Network File Tools/System Events --------------------------------
+$i dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends network-manager
+
+enable services ----------------------------------------------
+sudo systemctl enable avahi-daemon
+sudo systemctl enable acpid
+
+#codecs
+$i pulseaudio alsa-utils pavucontrol alsa-firmware-loaders alsa-oss alsa-tools alsamixergui volumeicon-alsa pacman paprefs pavumeter pulseaudio-utils ffmpeg2theora sound-icons
+$i lame libdvdnav4 libfaac0 libmad0 libmp3lame0 libquicktime2 libstdc++5 libxvidcore4 twolame vorbis-tools x264
+$i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-alsa gstreamer1.0-pulseaudio gstreamer1.0-tools
+
+
+# fuentes browser --------------------------------------------------------------------------------------------------------------------
+$i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
+
+#install nvm
+cd
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+#install npm and nodejs
+nvm install --lts
+
+#Install cargo
+cd
+curl https://sh.rustup.rs -sSf | sh
+
+
+#paquetes del usuario ---------------------------------------------------------------------------------------------------------------------
+$i1 kitty ripgrep chromium sxiv pcmanfm
+
+#install lsd command line
+cd
+wget https://github.com/lsd-rs/lsd/releases/download/0.23.1/lsd-musl_0.23.1_amd64.deb
+$s dpkg -i lsd-musl_0.23.1_amd64.deb
+
+#nvim
+cd
+wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+chmod u+x nvim.appimage
+$s mv nvim.appimage /usr/bin/nvim
+
+#install i3
+$i i3 i3status i3blocks 
+
+cd
+touch .xinitrc
+
+#.xinitrc
+echo -e "exec dbus-run-session i3" > $HOME/.xinitrc
+
+
+#user fonts
+cd
+$s cp -r ~/i3wm-dotfiles/config/fonts/JetBrainsMonoFonts /usr/share/fonts/
+$s cp -r ~/i3wm-dotfiles/config/fonts/HackerNerdFonts /usr/share/fonts/
+
+#kitty files
+cd
+cp -r ~/i3wm-dotfiles/config/kitty/ ~/.config/
+
+#i3 files
+#cd
+#cp -r ~/i3wm-dotfiles/config/i3/ ~/.config/
+
+#wallpapers
+#cp -r ~/i3wm-dotfiles/wallpapers/ ~/.local/share/
+
+#zathura files
+cd
+cp -r ~/i3wm-dotfiles/config/zathura/ ~/.config/
+
+sudo apt autoremove
+
+printf "\e[1;32mReinicia para aplicar cambios.\e[0m\n"
