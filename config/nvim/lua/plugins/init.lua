@@ -51,6 +51,8 @@ return require("packer").startup({
         --  snippet
         use({ "hrsh7th/vim-vsnip" })
         use({ "hrsh7th/vim-vsnip-integ" })
+        -- brackes colorizer
+        use({ "p00f/nvim-ts-rainbow" })
         -- ----------------------------------------------------------------------------------------------
         -- keybindings in popup
         use({ "folke/which-key.nvim" })

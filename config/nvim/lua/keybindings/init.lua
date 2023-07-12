@@ -26,4 +26,10 @@ map("n", "ñ", "<<", { noremap = true, silent = false })
 map("v", "<leader>ñ", ">>", { noremap = true, silent = false })
 map("v", "ñ", "<<", { noremap = true, silent = false })
 
+map("n", "t", "%", { noremap = true, silent = false })
+map("v", "t", "%", { noremap = true, silent = false })
+
+map("n", "m", "#", { noremap = true, silent = false })
+map("v", "m", "#", { noremap = true, silent = false })
+
 map("n", "<C-Space>", ":", { noremap = true, silent = false })

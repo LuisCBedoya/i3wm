@@ -1,0 +1,148 @@
+{
+  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+  "editor.fontFamily": "'Cascadia Code PL', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontLigatures": "'calt', 'ss01'",
+  "editor.cursorBlinking": "expand",
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.guides.bracketPairsHorizontal": false,
+  "editor.guides.bracketPairs": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.sideBar.location": "right",
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+  "workbench.startupEditor": "none",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.external.linuxExec": "kitty",
+  "terminal.integrated.fontFamily": "Cascadia Code PL",
+  "editor.minimap.enabled": false,
+  "terminal.integrated.allowChords": false,
+  "editor.tabSize": 4,
+  "editor.fontWeight": "600",
+  "editor.fontSize": 14,
+  "workbench.activityBar.visible": true,
+  "php.validate.executablePath": "/opt/lampp/bin/php",
+  "editor.formatOnSave": true,
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.incsearch": true,
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": false,
+  "vim.easymotionMarkerBackgroundColor": "#020202",
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.autoindent": false,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"],
+      "silent": "false"
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["selectNextSuggestion"],
+      "silent": "false"
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["selectPrevSuggestion"],
+      "silent": "false"
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["t"],
+      "after": ["%"],
+      "silent": "false"
+    },
+    {
+      "before": ["m"],
+      "after": ["#"],
+      "silent": "false"
+    },
+    {
+      "before": ["v"],
+      "after": ["V"],
+      "silent": "false"
+    },
+    {
+      "before": ["space", "w"],
+      "commands": ["workbench.action.files.save"],
+      "silent": "false"
+    },
+    {
+      "before": ["space", "x"],
+      "commands": ["workbench.action.closeActiveEditor"],
+      "silent": "false"
+    },
+    {
+      "before": ["space", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "silent": "false"
+    },
+    {
+      "before": ["space", "c", "l"],
+      "commands": ["editor.action.commentLine"],
+      "silent": "false"
+    },
+    {
+      "before": ["<Esc>"],
+      "commands": ["closeReplaceInFilesWidget"],
+      "silent": "false"
+    },
+    // {
+    //     "before": [
+    //         "space",
+    //         "h"
+    //     ],
+    //     "commands": [
+    //         "actions.find"
+    //     ],
+    //     "silent": "false"
+    // },
+    {
+      "before": ["space", "r"],
+      "commands": ["editor.action.startFindReplaceAction"],
+      "silent": "false"
+    },
+    {
+      "before": ["space", "t"],
+      "commands": ["workbench.action.terminal.new"],
+      "silent": "false"
+    },
+    {
+      "before": ["space", "q"],
+      "commands": ["workbench.action.closeActiveEditor"],
+      "silent": "false"
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"],
+      "silent": "false"
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"],
+      "silent": "false"
+    },
+    {
+      "before": ["t"],
+      "after": ["%"],
+      "silent": "false"
+    },
+    {
+      "before": ["space", "c", "l"],
+      "commands": ["editor.action.commentLine"],
+      "silent": "false"
+    },
+    {
+      "before": ["m"],
+      "after": ["#"],
+      "silent": "false"
+    }
+  ]
+}

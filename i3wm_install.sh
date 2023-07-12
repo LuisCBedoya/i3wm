@@ -23,18 +23,6 @@ else
 	exit 1
 fi
 
-#gnupg
-#$i gnupg gnupg2 gnupg1
-
-# backports repository and pipewire, wireplumber
-#cd
-#$s cp -r i3wm-dotfiles/config/files/pipewire-upstream.list /etc/apt/sources.list.d/
-#$s cp -r i3wm-dotfiles/config/files/wireplumber-upstream.list /etc/apt/sources.list.d/
-#$s cp -r i3wm-dotfiles/config/files/bullseye-backports.list /etc/apt/sources.list.d/
-#$s apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 25088A0359807596
-
-#$s apt update -y && $s apt upgrade -y
-
 # paquetes xorg -------------------------------------------------
 $i xorg xbacklight xbindkeys xinput xorg-dev
 
@@ -42,7 +30,7 @@ $i xorg xbacklight xbindkeys xinput xorg-dev
 $i intel-microcode
 
 #nvidia driver -------------------------------------------------------------------------------
-#$i nvidia-driver
+$i nvidia-driver
 
 #Paquetes para compilar ------------------------------------------
 $i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git curl wget unzip tar gzip python3-pip
@@ -56,25 +44,9 @@ sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
 #codecs
-$i alsa-utils pavucontrol alsa-firmware-loaders alsa-oss alsa-tools alsamixergui volumeicon-alsa pacman paprefs pavumeter pulseaudio-utils ffmpeg2theora sound-icons
+$i pulseaudio alsa-utils pavucontrol alsa-firmware-loaders alsa-oss alsa-tools alsamixergui volumeicon-alsa pacman paprefs pavumeter pulseaudio-utils ffmpeg2theora sound-icons
 $i lame libdvdnav4 libfaac0 libmad0 libmp3lame0 libquicktime2 libstdc++5 libxvidcore4 twolame vorbis-tools x264
 $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-alsa gstreamer1.0-pulseaudio gstreamer1.0-tools
-
-#pipewire --------------------------------------------------------
-#$i libfdk-aac2 libldacbt-{abr,enc}2 libopenaptx0
-#$i gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,bin,locales,tests}}
-#$i pipewire-doc
-#$i libpipewire-module-x11-bell
-
-#wirepumbler ----------------------------------------------------
-#$i wireplumber{,-doc} gir1.2-wp-0.4 libwireplumber-0.4-{0,dev}
-#$i wireplumber-locales
-
-#enable pipewire -----------------------------------------------
-#systemctl --user --now enable pipewire{,-pulse}.{socket,service}
-
-#enable wirepumbler --------------------------------------------
-#systemctl --user --now enable wireplumber.service
 
 # fuentes browser --------------------------------------------------------------------------------------------------------------------
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
@@ -84,7 +56,7 @@ cd
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 #install npm and nodejs
-nvm install --lts
+#nvm install --lts
 
 #Install cargo
 cd
@@ -103,7 +75,7 @@ curl https://sh.rustup.rs -sSf | sh
 #$s ninja -C build install
 
 #paquetes del usuario ---------------------------------------------------------------------------------------------------------------------
-$i1 kitty feh ripgrep chromium sxiv pcmanfm
+$i1 kitty feh lxappearance pcmanfm lxpolkit ripgrep dunst libnotify-bin flameshot htop geany ristretto dmenu zathura
 
 #install lsd command line
 cd
@@ -128,18 +100,16 @@ $s mv nvim.appimage /usr/bin/nvim
 #pip3 install --upgrade yt-dlp
 
 #paquetes requeridos para i3-gaps ------------------------------------------------------------------------------------------------------------------------------------
-#$i meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev i3status
+$i meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev i3status
 
 #Install i3 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-#cd
-#git clone https://github.com/Airblader/i3 i3-gaps
-#cd i3-gaps
-#mkdir -p build && cd build
-#meson --prefix /usr/local
-#ninja
-#$s ninja install
-
-$i i3 i3status i3block 
+cd
+git clone https://github.com/Airblader/i3 i3-gaps
+cd i3-gaps
+mkdir -p build && cd build
+meson --prefix /usr/local
+ninja
+$s ninja install
 
 cd
 touch .xinitrc
@@ -147,17 +117,9 @@ touch .xinitrc
 #.xinitrc
 echo -e "exec dbus-run-session i3" > $HOME/.xinitrc
 
-#Install pfetch
-#cd
-#wget https://github.com/dylanaraps/pfetch/archive/master.zip
-#unzip master.zip
-#$s install pfetch-master/pfetch /usr/local/bin/
-#ls -l /usr/local/bin/pfetch
-#rm -r master.zip
-
 #user fonts
 cd
-$s cp -r ~/i3wm-dotfiles/config/fonts/JetBrainsMonoFonts /usr/share/fonts/
+$s cp -r ~/i3wm-dotfiles/config/fonts/FontsCascadia /usr/share/fonts/
 $s cp -r ~/i3wm-dotfiles/config/fonts/HackerNerdFonts /usr/share/fonts/
 
 #kitty files
@@ -165,19 +127,23 @@ cd
 cp -r ~/i3wm-dotfiles/config/kitty/ ~/.config/
 
 #i3 files
-#cd
-#cp -r ~/i3wm-dotfiles/config/i3/ ~/.config/
+cd
+cp -r ~/i3wm-dotfiles/config/i3/ ~/.config/
 
 #dunst files
-#cd
-#cp -r ~/i3wm-dotfiles/config/dunst/ ~/.config/
+cd
+cp -r ~/i3wm-dotfiles/config/dunst/ ~/.config/
+
+#nvim files
+cd
+cp -r ~/i3wm-dotfiles/config/nvim/ ~/.config/
 
 #picom files
 #cd
 #cp -r ~/i3wm-dotfiles/config/picom/ ~/.config/
 
 #wallpapers
-#cp -r ~/i3wm-dotfiles/wallpapers/ ~/.local/share/
+cp -r ~/i3wm-dotfiles/wallpapers/ ~/.local/share/
 
 #zathura files
 cd
