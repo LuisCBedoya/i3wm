@@ -23,32 +23,32 @@ else
 	exit 1
 fi
 
-# paquetes xorg -------------------------------------------------
+# paquetes xorg
 $i xorg xbacklight xbindkeys xinput xorg-dev
 
-# $i amd64-microcode --------------------------------------------
+# $i amd64-microcode
 $i intel-microcode
 
-#nvidia driver -------------------------------------------------------------------------------
+#nvidia driver
 $i nvidia-driver
 
-#Paquetes para compilar ------------------------------------------
+#Paquetes para compilar
 $i linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git curl wget unzip tar gzip python3-pip
 $i libncurses-dev flex bison openssl libssl-dev dkms libelf-dev pkg-config liblz4-tool bc rsync
 
-# Network File Tools/System Events --------------------------------
+# Network File Tools/System Events
 $i dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends network-manager
 
-enable services ----------------------------------------------
+#enable services
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
 #codecs
-$i pulseaudio alsa-utils pavucontrol alsa-firmware-loaders alsa-oss alsa-tools alsamixergui volumeicon-alsa pacman paprefs pavumeter pulseaudio-utils ffmpeg2theora sound-icons
+$i pulseaudio alsa-utils pavucontrol alsa-firmware-loaders alsa-oss alsa-tools alsamixergui volumeicon-alsa pacman paprefs pavumeter pulseaudio-utils sound-icons
 $i lame libdvdnav4 libfaac0 libmad0 libmp3lame0 libquicktime2 libstdc++5 libxvidcore4 twolame vorbis-tools x264
 $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-alsa gstreamer1.0-pulseaudio gstreamer1.0-tools
 
-# fuentes browser --------------------------------------------------------------------------------------------------------------------
+# fuentes browser
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
 #install nvm
@@ -75,7 +75,7 @@ curl https://sh.rustup.rs -sSf | sh
 #$s ninja -C build install
 
 #paquetes del usuario ---------------------------------------------------------------------------------------------------------------------
-$i1 kitty feh lxappearance pcmanfm lxpolkit ripgrep dunst libnotify-bin flameshot htop geany ristretto dmenu zathura
+$i1 kitty feh lxappearance pcmanfm lxpolkit ripgrep dunst libnotify-bin flameshot htop geany ristretto dmenu zathura tumbler
 
 #install lsd command line
 cd

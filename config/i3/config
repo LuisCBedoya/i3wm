@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # ocultar titulo de las ventanas 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 default_border pixel 0
 
 
@@ -13,10 +13,13 @@ default_border pixel 0
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 #wallpaper 
-exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/gplant.jpg
+exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/blue.jpg
+
+#polkit
+exec --no-startup-id /usr/bin/lxpolkit
 
 #trasparencia 
-exec_always --no-startup-id picom
+#exec_always --no-startup-id picom
 
 #demonio de notificaciones
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
@@ -47,21 +50,22 @@ floating_modifier $mod
 
 
 # Iniciar terminal 
-bindsym $mod+Return exec kitty
-bindsym $mod+y exec scrot
-
-
+bindsym $mod+Return exec "kitty"
+# screenshot
+bindsym $mod+shift+s exec "flameshot gui"
+#passwd manager
+bindsym $mod+shift+p exec "keepassxc"
+#abrir browser
+bindsym $mod+Shift+b exec "librewolf"
+#abrir gestor de archivos
+bindsym $mod+Shift+f exec "pcmanfm"
+#imagenes
+bindsym $mod+Shift+i exec "ristretto"
+# mostrar lanzador de aplicaciones
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -b
 
 # Cerrar ventana 
 bindsym $mod+Shift+q kill
-
-#abrir browser
-bindsym $mod+Shift+b exec "chromium"
-
-bindsym $mod+Shift+t exec "thunar"
-
-# mostrar lanzador de aplicaciones
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons 
 
 # cambiar foco
 bindsym $mod+h focus left
@@ -184,7 +188,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status 
         #position top
 #}
-client.focused #27423c #27423c  #27423c #5d705c 
+client.focused #6f8292 #4d5d66 #6f8292 #4d5d66
 
 gaps outer 0
 gaps inner 6
