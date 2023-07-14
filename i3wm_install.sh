@@ -75,7 +75,7 @@ curl https://sh.rustup.rs -sSf | sh
 #$s ninja -C build install
 
 #paquetes del usuario ---------------------------------------------------------------------------------------------------------------------
-$i1 kitty feh lxappearance pcmanfm lxpolkit ripgrep dunst libnotify-bin flameshot htop geany ristretto dmenu zathura tumbler
+$i1 kitty feh lxappearance pcmanfm lxpolkit ripgrep dunst libnotify-bin flameshot htop geany ristretto dmenu zathura tumbler python3.11-venv
 
 #install lsd command line
 cd

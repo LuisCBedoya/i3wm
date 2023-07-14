@@ -29,6 +29,8 @@ return require("packer").startup({
         use({ "nvim-telescope/telescope.nvim", tag = "0.1.1", requires = { { "nvim-lua/plenary.nvim" } } })
 
         -- treesitter and modules -----------------------------------------------------
+        --lspsaga
+        use({ "kkharji/lspsaga.nvim" })
         -- syntax
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
         -- autopairs

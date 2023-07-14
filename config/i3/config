@@ -57,10 +57,14 @@ bindsym $mod+shift+s exec "flameshot gui"
 bindsym $mod+shift+p exec "keepassxc"
 #abrir browser
 bindsym $mod+Shift+b exec "librewolf"
+#abrir vscode-oss
+bindsym $mod+Shift+v exec "codium"
 #abrir gestor de archivos
 bindsym $mod+Shift+f exec "pcmanfm"
 #imagenes
 bindsym $mod+Shift+i exec "ristretto"
+#telegram
+bindsym $mod+Shift+t exec "telegram-desktop"
 # mostrar lanzador de aplicaciones
 bindsym $mod+shift+d exec --no-startup-id dmenu_run -b
 

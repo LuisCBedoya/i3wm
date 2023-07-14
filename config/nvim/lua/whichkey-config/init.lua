@@ -1,6 +1,5 @@
 local wk = require("which-key")
 local Terminal = require("toggleterm.terminal").Terminal
-local Terminal = require("toggleterm.terminal").Terminal
 
 local toggle_float = function()
     local float = Terminal:new({ direction = "float" })
@@ -36,6 +35,15 @@ local mappings = {
             "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>",
             "List Workspace Folders",
         },
+        t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
+        d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
+        r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+        R = { "<cmd>Lspsaga rename<cr>", "Rename" },
+        a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+        e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show Line Diagnostics" },
+        n = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Go To Next Diagnostic" },
+        N = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Go To Previous Diagnostic" },
     },
     z = {
         name = "Focus",

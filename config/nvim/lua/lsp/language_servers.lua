@@ -119,3 +119,11 @@ require("lspconfig").intelephense.setup({
         client.server_capabilities.document_formatting = false
     end,
 })
+
+-- language server for python
+require("lspconfig").pyright.setup({
+    capabilities = capabilities,
+    on_attach = function(client)
+        client.server_capabilities.document_formatting = false
+    end,
+})
