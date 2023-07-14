@@ -1,17 +1,17 @@
 {
-  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+  "workbench.colorTheme": "Ayu Dark",
   "editor.fontFamily": "'Cascadia Code PL', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontLigatures": "'calt', 'ss01'",
   "editor.cursorBlinking": "expand",
   "editor.linkedEditing": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.stickyScroll.enabled": false,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.guides.bracketPairsHorizontal": false,
   "editor.guides.bracketPairs": true,
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.sideBar.location": "right",
-  "symbols.hidesExplorerArrows": false,
-  "workbench.iconTheme": "symbols",
+  "workbench.sideBar.location": "left",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.external.linuxExec": "kitty",
@@ -144,5 +144,7 @@
       "after": ["#"],
       "silent": "false"
     }
-  ]
+  ],
+  "explorer.confirmDelete": false,
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar"
 }

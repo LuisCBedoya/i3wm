@@ -51,6 +51,7 @@ require("lspconfig").lua_ls.setup({
         },
     },
 })
+
 -- -----------------------------------------------------------------------------------------------------------------------------
 -- language-servers for css
 require("lspconfig").cssls.setup({
@@ -72,6 +73,7 @@ require("lspconfig").cssls.setup({
         client.server_capabilities.document_formatting = false
     end,
 })
+
 -- language-servers for js
 require("lspconfig").tsserver.setup({
     capabilities = capabilities,
@@ -79,6 +81,7 @@ require("lspconfig").tsserver.setup({
         client.server_capabilities.document_formatting = false
     end,
 })
+
 -- language-servers for html
 require("lspconfig").emmet_ls.setup({
     capabilities = capabilities,
@@ -107,4 +110,12 @@ require("lspconfig").emmet_ls.setup({
             },
         },
     },
+})
+
+-- language server for php
+require("lspconfig").intelephense.setup({
+    capabilities = capabilities,
+    on_attach = function(client)
+        client.server_capabilities.document_formatting = false
+    end,
 })
