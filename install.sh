@@ -32,7 +32,7 @@ $il void-repo-{nonfree,multilib,multilib-nonfree}
 $s xbps-install -Sy
 
 #ESENCIALES
-$il at-spi2-core p7zip xorg-minimal xorg-fonts xorg-video-drivers xsetroot gvfs ntfs-3g curl wget dialog mtools dosfstools nss-mdns avahi
+$il at-spi2-core p7zip xorg-minimal xorg-fonts xorg-video-drivers xsetroot gvfs ntfs-3g curl wget dialog mtools dosfstools nss-mdns avahi xdg-user-dirs
 
 #NVIDIA
 $il nvidia nvidia-libs-32bit
@@ -72,7 +72,7 @@ $s ln -s /etc/sv/dbus /var/service/
 $s rm -r /var/service/polkitd
 
 #CONFIG
-#xdg-user-dirs-update
+xdg-user-dirs-update
 
 echo -e '#autostart
 \nif [ -d "$HOME/.local/bin" ] ; then
