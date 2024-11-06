@@ -12,6 +12,7 @@ apt install -y \
     libxfce4ui-utils \
     xfce4-panel \
     xfce4-pulseaudio-plugin \
+    xfce4-notifyd \
     xfce4-whiskermenu-plugin \
     xfce4-session \
     xfce4-settings \
@@ -24,7 +25,7 @@ apt install -y \
 apt install -y nvidia-driver
 apt install -y linux-headers-$(uname -r) build-essential make automake pkg-config cmake autoconf git
 apt install -y intel-microcode
-apt install --no-install-recommends -y kitty chromium dunst libnotify-bin
+apt install --no-install-recommends -y alacritty
 
 
 echo
