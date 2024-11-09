@@ -48,7 +48,7 @@ $i gstreamer1.0-x gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1
 $i fonts-noto fonts-noto-cjk fonts-noto-extra fonts-noto-color-emoji
 
 #UserPackages
-$i1 alacritty feh lxappearance pcmanfm lxpolkit ripgrep dunst libnotify-bin flameshot htop zathura vlc nvtop gpicview
+$i1 alacritty feh lxappearance thunar lxpolkit ripgrep dunst libnotify-bin flameshot htop zathura vlc nvtop gpicview
 
 #xinitrc
 echo -e '#autostart
