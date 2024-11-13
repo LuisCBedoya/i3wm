@@ -37,7 +37,7 @@ custom_cursor_colors: true
   # Colores (Vesper)
 colors:
   primary:
-    background: '#101010'
+    background: '#1a1a1a'
     foreground: '#ffffff'
 
   normal:
