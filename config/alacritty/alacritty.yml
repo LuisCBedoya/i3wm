@@ -34,30 +34,27 @@ font:
 
 custom_cursor_colors: true
 
-  # Colores (Vesper)
 colors:
   primary:
     background: '#1a1a1a'
-    foreground: '#ffffff'
-
+    foreground: '#ccd1d5'
   normal:
     black:   '#101010'
-    red:     '#f5a191'
-    green:   '#90b99f'
-    yellow:  '#e6b99d'
-    blue:    '#aca1cf'
-    magenta: '#e29eca'
-    cyan:    '#ea83a5'
-    white:   '#a0a0a0'
-
+    red:     '#d57c74'
+    green:   '#7ca09f'
+    yellow:  '#d6a288'
+    blue:    '#536d92'
+    magenta: '#8b6587'
+    cyan:    '#779ba7'
+    white:   '#ccd1d5'
   bright:
-    black:   '#7e7e7e'
-    red:     '#ff8080'
-    green:   '#99ffe4'
-    yellow:  '#ffc799'
-    blue:    '#b9aeda'
-    magenta: '#ecaad6'
-    cyan:    '#f591b2'
+    black:   '#5e5e5e'
+    red:     '#ffb2a2'
+    green:   '#a4dbd0'
+    yellow:  '#ffd4b4'
+    blue:    '#6b83ac'
+    magenta: '#a787a7'
+    cyan:    '#99bcc9'
     white:   '#ffffff'
 
 
@@ -75,7 +72,7 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style:
-    shape: Beam
+    shape: Block
     blinking: On
 
 # Shell
