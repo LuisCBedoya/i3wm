@@ -1,0 +1,12 @@
+classic: false
+
+icons:
+  when: auto
+  theme: fancy
+  separator: " "
+
+sorting:
+  column: name
+  reverse: false
+  dir-grouping: first
+

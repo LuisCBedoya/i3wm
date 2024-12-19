@@ -1,0 +1,29 @@
+name:
+  .trash: 
+  .cargo: 
+  .emacs.d: 
+  a.out: 
+  nvim:   
+  desktop: 
+extension:
+  go: 
+  hs: 
+  rs: 󱘗 
+  pdf: 
+  zip:  
+  tar:   
+  ts: 
+  kdbx:   
+  docx:  
+  
+filetype:
+  dir: 
+  file: 
+  pipe: 󱃜 
+  socket: 󰆨
+  executable: 
+  symlink-dir:   
+  symlink-file: 
+  device-char: 
+  device-block: 󰜫
+  special: 

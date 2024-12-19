@@ -5,6 +5,15 @@
 
     # Which monitor should the notifications be displayed on.
     monitor = 0
+    # close notification
+    close = ctrl+space
+
+    # close all notifications
+    close_all = ctrl+shift+space
+
+    # redisplay last message(s)
+    # On the US keyboard layout 'grave' is normally above TAB and left of '1'.
+    history = mod1+c
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -18,6 +27,7 @@
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
     follow = mouse
+    word_wrap = yes
 
     ### Geometry ###
 
@@ -25,12 +35,12 @@
     width = (0, 300)
     # constant width of 300
     # width = 0
-    geometry = "300x5-10+35"	
+    #geometry = "500x10-8+34"
     # The maximum height of a single notification, excluding the frame.
     height = 200
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-center
 
     # Offset from the origin
     offset = 10x25
@@ -75,17 +85,17 @@
     separator_height = 1
 
     # Padding between text and separator.
-    padding = 8
+    padding = 20
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 20
 
     # Padding between text and icon.
     text_icon_padding = 10
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
     frame_color = "{color4}"
@@ -116,7 +126,7 @@
 
     ### Text ###
 
-    font = CascadiaCodePL-SemiBoldItalic 10
+    font = Hack Bold 9
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -156,7 +166,8 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    #format = "<b>%s</b>\n%b"
+    format = "<span><b>%s</b>%p</span>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -207,10 +218,10 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 80
+    max_icon_size = 32
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
 
     ### History ###
 
@@ -260,7 +271,7 @@
 
     # Set this to true to use X11 output on Wayland.
     force_xwayland = false
-    fullscreen = pushback
+    fullscreen = show
 
     ### Legacy
 
@@ -306,26 +317,26 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#090b10"
-    foreground = "#fff"
+    background = "#000000"
+    foreground = "#ffffff"
     frame_color = "#00bc00"
-    timeout = 5
+    timeout = 0
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#090b10"
-    foreground = "#fff"
+    background = "#000000"
+    foreground = "#ffffff"
     frame_color = "#e8d900"    
-    timeout = 5
+    timeout = 0
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#090b10"
-    foreground = "#fff"
+    background = "#000000"
+    foreground = "#ffffff"
     frame_color = "#d50000"
-    timeout = 5
+    timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 
