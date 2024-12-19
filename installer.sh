@@ -4,13 +4,6 @@ i="sudo apt install -y"
 i1="sudo apt install --no-install-recommends -y"
 s="sudo"
 
-# Verificar si el script se ejecuta como root
-if ! [ $(id -u) = 0 ]; then
-  echo "Este script debe ejecutarse con sudo, inténtalo de nuevo..."
-  exit 1
-fi
-
-# Preguntar si el usuario desea habilitar los repositorios non-free
 echo "El script requiere de repositorios non-free"
 sleep 2s
 echo "¿Deseas habilitar los repositorios 'non-free' en tu sistema? (y/n)"
@@ -18,14 +11,10 @@ read respuesta
 
 if [ "$respuesta" = "sí" ] || [ "$respuesta" = "si" ] || [ "$respuesta" = "y" ]; then
   echo "Agregando los repositorios 'non-free' a /etc/apt/sources.list..."
-
-  # Respaldar el archivo sources.list
+  
   $s cp /etc/apt/sources.list /etc/apt/sources.list.bak
-
-  # Eliminar el archivo original sources.list
   $s rm /etc/apt/sources.list
 
-  # Crear el nuevo archivo sources.list con solo los repositorios non-free
   cat <<EOF | $s tee /etc/apt/sources.list
 deb http://deb.debian.org/debian $(lsb_release -sc) main contrib non-free non-free-firmware
 deb-src http://deb.debian.org/debian $(lsb_release -sc) main contrib non-free non-free-firmware
