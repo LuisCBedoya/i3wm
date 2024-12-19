@@ -236,7 +236,7 @@ echo -e '#autostart
 \nexport GDK_BACKEND=x11
 \nsetxkbmap latam &
 \npipewire &
-\nexec dbus-run-session i3' > $HOME/.xinitrc
+\nexec dbus-run-session i3' > /home/luc/.xinitrc
 echo ""
 echo "Archivo .xinitrc configurado."
 echo ""
