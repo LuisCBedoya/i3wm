@@ -19,7 +19,7 @@ font:
     style: Bold
 
   italic:
-    family: IJetBrainsMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   size: 10.0
@@ -36,17 +36,17 @@ custom_cursor_colors: true
 
 colors:
   primary:
-    background: '#1a1a1a'
+    background: '#1F1F1F'
     foreground: '#ccd1d5'
   normal:
     black:   '#101010'
     red:     '#d57c74'
-    green:   '#7ca09f'
+    green:   '#33D17A'
     yellow:  '#d6a288'
-    blue:    '#536d92'
+    blue:    '#4798FF'
     magenta: '#8b6587'
     cyan:    '#779ba7'
-    white:   '#ccd1d5'
+    white:   '#ffffff'
   bright:
     black:   '#5e5e5e'
     red:     '#ffb2a2'
@@ -74,14 +74,3 @@ cursor:
   style:
     shape: Block
     blinking: On
-
-# Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-#shell:
-#  program: /usr/local/bin/fish
-#  args:
-#    - --command=tmux
-
-# vim: nospell

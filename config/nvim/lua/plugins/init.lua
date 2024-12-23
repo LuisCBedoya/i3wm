@@ -1,99 +1,144 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({
+local icons = require('plugins.ui.icons')
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
     'git',
     'clone',
-    '--depth',
-    '1',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path,
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable',
+    lazypath,
   })
-  vim.api.nvim_command('packadd packer.nvim')
 end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup({
-  function(use)
-    -- ----------------------------------------------------------------------------------------------------------------------
-    -- packer plugin manager
-    use({ 'wbthomason/packer.nvim' })
-    -- enable icons
-    use({ 'nvim-tree/nvim-web-devicons' })
-    -- nightfox theme
-    use({ 'EdenEast/nightfox.nvim' })
-    -- a statusline
-    -- use({ 'nvim-lualine/lualine.nvim' })
-    -- bufferline
-    use({ 'akinsho/bufferline.nvim', tag = '*' })
-    -- file explorer
-    use({ 'nvim-tree/nvim-tree.lua' })
-    -- -- nvim-ufo
-    use({ 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' })
-    -- statuscol for fix problem nvim-ufo
-    use({ 'luukvbaal/statuscol.nvim' })
-    -- autoruner
-    -- use({ "krshrimali/nvim-autorunner" })
-    -- use({ "rcarriga/nvim-notify" })
-    -- -- fidget
-    -- use({
-    --     "j-hui/fidget.nvim",
-    --     tag = "legacy",
-    -- })
-    -- Find, Filter, Preview, Pick. All lua, all the time.
-    use({ 'nvim-telescope/telescope.nvim', tag = '0.1.4', requires = { { 'nvim-lua/plenary.nvim' } } })
+local plugins = {
+  -- *** ui ***
+    {
+    'nvim-treesitter/nvim-treesitter',
+    event = { 'BufRead', 'BufNewFile' },
+    config = function()
+      require('plugins.ui.treesitter')
+    end,
+  },
+  { 'JoosepAlviste/nvim-ts-context-commentstring' },
+  {
+    'nvim-tree/nvim-web-devicons',
+    opts = function()
+      return { override = require('plugins.ui.devicons') }
+    end,
+    config = function(_, opts)
+      require('nvim-web-devicons').setup(opts)
+    end,
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = function()
+      require('plugins.ui.autopairs')
+    end,
+  },
+  { 'hiphish/rainbow-delimiters.nvim' },
+  {
+    'norcalli/nvim-colorizer.lua',
+    event = 'BufReadPre',
+    config = function()
+      require('colorizer').setup()
+    end,
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('plugins.ui.indent-blankline')
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    event = 'BufWinEnter',
+    config = function()
+      require('plugins.ui.lualine')
+    end,
+  },
+  {
+    'famiu/bufdelete.nvim',
+  },
+  {
+    'akinsho/bufferline.nvim',
+    config = function()
+      require('plugins.ui.bufferline')
+    end,
+    -- event = 'User FileOpened',
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('plugins.ui.telescope')
+    end,
+  },
+  { 'nvim-lua/plenary.nvim' },
+    {
+    'Mofiqul/vscode.nvim',
+    name = 'vscode',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('plugins.ui.vscode-theme')
+    end,
+  },
 
-    -- treesitter and modules -----------------------------------------------------
-    --lspsaga
-    use({ 'kkharji/lspsaga.nvim' })
-    -- syntax
-    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-    -- for java
-    use({ 'mfussenegger/nvim-jdtls' })
-    -- autopairs
-    use({ 'windwp/nvim-autopairs' })
-    -- autotag
-    use({ 'windwp/nvim-ts-autotag' })
-    -- comments
-    use({ 'terrortylor/nvim-comment' })
-    -- indent guides for neovim
-    use({ 'lukas-reineke/indent-blankline.nvim' })
-    -- nvim-colorizer
-    use({ 'norcalli/nvim-colorizer.lua' })
-    -- nvim-cmp - A completion engine plugin for neovim written in Lua. -----------------------------
-    use({ 'hrsh7th/cmp-nvim-lsp' })
-    use({ 'hrsh7th/cmp-buffer' })
-    use({ 'hrsh7th/cmp-path' })
-    use({ 'hrsh7th/cmp-cmdline' })
-    use({ 'hrsh7th/nvim-cmp' })
-    use({ 'hrsh7th/cmp-vsnip' })
-    --  snippet
-    use({ 'hrsh7th/vim-vsnip' })
-    use({ 'hrsh7th/vim-vsnip-integ' })
-    -- brackes colorizer
-    use({ 'p00f/nvim-ts-rainbow' })
-    use({ 'onsails/lspkind.nvim' })
-    -- ----------------------------------------------------------------------------------------------
-    -- keybindings in popup
-    use({ 'folke/which-key.nvim' })
-    -- gitsigns info
-    use({'lewis6991/gitsigns.nvim'})
-    -- git fugitive
-    use({ 'tpope/vim-fugitive' })
-    -- toggleterm
-    use({'akinsho/toggleterm.nvim', tag = '*'})
-    -- Mason installer
-    use({ 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'neovim/nvim-lspconfig' })
-    -- format null-ls
-    use({ 'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')" })
-    -- onedark theme
-    -- use({ "navarasu/onedark.nvim" })
-  end,
-  -- --------------------------------------------------------------------------------------------------------------------------------------
-  config = {
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single' })
-      end,
+  -- tools
+    {
+    'kyazdani42/nvim-tree.lua',
+    cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
+    config = function()
+      require('plugins.ui.tree')
+    end,
+  },
+}
+
+local opts = {
+  ui = {
+    icons = {
+      ft = icons.lazy.Ft,
+      lazy = icons.lazy.Lazy,
+      loaded = icons.lazy.Loaded,
+      not_loaded = icons.lazy.Not_loaded,
     },
   },
-})
+
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        '2html_plugin',
+        'tohtml',
+        'getscript',
+        'getscriptPlugin',
+        'gzip',
+        'logipat',
+        'netrw',
+        'netrwPlugin',
+        'netrwSettings',
+        'netrwFileHandlers',
+        'matchit',
+        'tar',
+        'tarPlugin',
+        'rrhelper',
+        'spellfile_plugin',
+        'vimball',
+        'vimballPlugin',
+        'zip',
+        'zipPlugin',
+        'tutor',
+        'rplugin',
+        'syntax',
+        'synmenu',
+        'optwin',
+        'compiler',
+        'bugreport',
+        'ftplugin',
+      },
+    },
+  },
+}
+
+require('lazy').setup(plugins, opts)
